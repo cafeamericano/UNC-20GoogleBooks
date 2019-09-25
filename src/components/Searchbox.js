@@ -7,7 +7,17 @@ class Searchbox extends Component {
   render() {
     return (
       <div class="card mb-3">
-        <div class="card-body">This is some text within a card body.</div>
+        <div class="card-body">
+          <form class="form-inline">
+            <h6>Search for a Book</h6>
+            <div class="form-group mx-sm-3 mb-2">
+              <input type="text" class="form-control" placeholder="Title" />
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
