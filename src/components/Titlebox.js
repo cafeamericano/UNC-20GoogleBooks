@@ -7,11 +7,10 @@ class Titlebox extends Component {
   render() {
     return (
       <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">Fluid jumbotron</h1>
+        <div class="container text-center">
+          <h4 class="display-4">(React) Google Books Search</h4>
           <p class="lead">
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
+            Search for and Save Books of Interest
           </p>
         </div>
       </div>
