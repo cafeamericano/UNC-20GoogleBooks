@@ -8,10 +8,10 @@ class Bookcard extends Component {
     return (
       <div class="card mb-3">
         <div class="card-body">
-          <div>{this.props.data.title}</div>
-          <img src={this.props.data.image} />
-          <div>{this.props.data.description}</div>
-          <a href={this.props.data.link}>Read more.</a>
+          <div>{this.props.data.volumeInfo.title}</div>
+          <img src={this.props.data.volumeInfo.imageLinks.smallThumbnail} />
+          <div>{this.props.data.volumeInfo.description}</div>
+          <a href={this.props.data.selfLink}>Go to book.</a>
         </div>
       </div>
     );
