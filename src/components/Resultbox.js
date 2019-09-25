@@ -12,8 +12,8 @@ class Resultbox extends Component {
   componentWillMount = () => this.grabBooksFromApi();
 
   grabBooksFromApi = () => {
-    let url =
-      "https://www.googleapis.com/books/v1/volumes?q=title:harry+potter";
+    let searchTerms = this.props.activeSearchTerm;
+    let url = `https://www.googleapis.com/books/v1/volumes?q=title:${searchTerms}`;
     fetch(url)
       .then(response => response.json())
       .then(response => {
