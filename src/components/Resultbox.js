@@ -11,6 +11,8 @@ class Resultbox extends Component {
 
   componentWillMount = () => this.grabBooksFromApi();
 
+  componentDidUpdate = () => this.grabBooksFromApi();
+
   grabBooksFromApi = () => {
     let searchTerms = this.props.activeSearchTerm;
     let url = `https://www.googleapis.com/books/v1/volumes?q=title:${searchTerms}`;
@@ -26,18 +28,24 @@ class Resultbox extends Component {
 
   render = () => {
     //Ensure that data has been pulled from API
-    if (this.state.searchResults.length !== 0) {
-      console.log(this.state.searchResults[0].volumeInfo.title);
+    if (this.state.searchResults === undefined) {
+      return (
+        <div class="card mb-3 p-3 bg-secondary">
+          <h6>Results</h6>
+          <div class="card-body">There are no records to display.</div>
+        </div>
+      );
+    } else {
+      let cards = this.state.searchResults.map(item => (
+        <Resultcard data={item} />
+      ));
+      return (
+        <div class="card mb-3 p-3 bg-secondary">
+          <h6>Results</h6>
+          <div class="card-body">{cards}</div>
+        </div>
+      );
     }
-    let cards = this.state.searchResults.map(item => (
-      <Resultcard data={item} />
-    ));
-    return (
-      <div class="card mb-3 p-3">
-        <h6>Results</h6>
-        <div class="card-body">{cards}</div>
-      </div>
-    );
   };
 }
 

@@ -11,9 +11,20 @@ class Searchbox extends Component {
           <form class="form-inline">
             <h6>Search for a Book</h6>
             <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control" placeholder="Title" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Title"
+                name='activeSearchTerm'
+                onChange={this.props.handleInputChange}
+                value={this.props.value}
+              />
             </div>
-            <button type="submit" class="btn btn-primary mb-2">
+            <button
+              onClick={this.props.handleFormSubmit}
+              type="submit"
+              class="btn btn-primary mb-2"
+            >
               Search
             </button>
           </form>

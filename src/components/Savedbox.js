@@ -22,7 +22,6 @@ class Savedbox extends Component {
     fetch(url)
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           savedBooks: response
         });
@@ -37,7 +36,7 @@ class Savedbox extends Component {
       return null;
     } else {
       return (
-        <div class="card mb-3 p-3">
+        <div class="card mb-3 p-3 bg-secondary">
           <h6>Saved Books</h6>
           <div class="card-body">{allSavedBooks}</div>
         </div>
