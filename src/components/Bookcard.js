@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
-class Resultcard extends Component {
+class Bookcard extends Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
       <div class="card mb-3">
-        <div class="card-body">This is some text within a card body.</div>
+        <div class="card-body">{this.props.title}</div>
       </div>
     );
   }
 }
 
-export default Resultcard;
+export default Bookcard;

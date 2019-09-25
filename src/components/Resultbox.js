@@ -4,6 +4,8 @@ class Resultbox extends Component {
   constructor(props) {
     super(props);
   }
+
+  
   render() {
     return (
       <div class="card mb-3">

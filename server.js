@@ -22,9 +22,19 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
-app.get(".hello", (req, res) => {
+app.get("/hello", (req, res) => {
   res.send("Hello World");
 });
+
+app.get('/api/books', (req, res) => {
+  db.Book.find({})
+  .then(function(queryResult) {
+    res.json(queryResult);
+  })
+  .catch(function(err) {
+    res.json(err);
+  });
+})
 
 // Send every other request to the React app
 // Define any API routes before this runs
