@@ -4,6 +4,7 @@ import Titlebox from "./Titlebox";
 import Searchbox from "./Searchbox";
 import Resultbox from "./Resultbox";
 import Savedbox from "./Savedbox";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class Main extends Component {
   constructor(props) {
@@ -30,19 +31,19 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
+      <Router>
         <Navbar />
-        <div className="container">
-          <Titlebox />
+        <Titlebox />
+        <Route exact path="/saved" component={Savedbox} />
+        <Route exact path="/" className="container">
           <Searchbox
             value={this.state.keywords}
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
           />
           <Resultbox activeSearchTerm={this.state.activeSearchTerm} />
-          <Savedbox />
-        </div>
-      </div>
+        </Route>
+      </Router>
     );
   }
 }
