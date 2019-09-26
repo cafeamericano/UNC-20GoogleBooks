@@ -33,7 +33,7 @@ class Main extends Component {
         <div className="container">
           <Titlebox />
           <Searchbox
-            value={this.state.activeSearchTerm}
+            value={this.state.search}
             handleInputChange={this.handleInputChange}
             handleFormSubmit={this.handleFormSubmit}
           />

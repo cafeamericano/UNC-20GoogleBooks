@@ -9,9 +9,9 @@ class Resultbox extends Component {
     };
   }
 
-  componentWillMount = () => this.grabBooksFromApi();
-
-  componentDidUpdate = () => this.grabBooksFromApi();
+  componentDidMount = () => {
+    this.grabBooksFromApi()
+  }
 
   grabBooksFromApi = () => {
     let searchTerms = this.props.activeSearchTerm;
@@ -19,7 +19,6 @@ class Resultbox extends Component {
     fetch(url)
       .then(response => response.json())
       .then(response => {
-        console.log(response);
         this.setState({
           searchResults: response.items
         });
