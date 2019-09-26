@@ -20,6 +20,7 @@ app.use(express.json());
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
 // }
+
 if (process.env.NODE_ENV) {
   app.use(express.static(path.join(__dirname, "build")));
 }
