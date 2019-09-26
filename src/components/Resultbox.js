@@ -5,17 +5,24 @@ class Resultbox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResults: []
+      searchResults: [],
+      searchTerm: 'harry'
     };
   }
 
   componentDidMount = () => {
-    this.grabBooksFromApi()
-  }
+    this.grabBooksFromApi();
+  };
+
+  componentDidUpdate = () => {
+    if(this.props.activeSearchTerm !== this.state.searchTerm){
+      this.setState({searchTerm: this.props.activeSearchTerm});
+      this.grabBooksFromApi()
+    }
+  };
 
   grabBooksFromApi = () => {
-    let searchTerms = this.props.activeSearchTerm;
-    let url = `https://www.googleapis.com/books/v1/volumes?q=title:${searchTerms}`;
+    let url = `https://www.googleapis.com/books/v1/volumes?q=title:${this.state.searchTerm}`;
     fetch(url)
       .then(response => response.json())
       .then(response => {
@@ -35,8 +42,8 @@ class Resultbox extends Component {
         </div>
       );
     } else {
-      let cards = this.state.searchResults.map(item => (
-        <Resultcard data={item} />
+      let cards = this.state.searchResults.map((item) => (
+        <Resultcard key={item.id} data={item} />
       ));
       return (
         <div class="card mb-3 p-3 bg-secondary">

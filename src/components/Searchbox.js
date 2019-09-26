@@ -15,7 +15,7 @@ class Searchbox extends Component {
                 type="text"
                 class="form-control"
                 placeholder="Title"
-                name='activeSearchTerm'
+                name='keywords'
                 onChange={this.props.handleInputChange}
                 value={this.props.value}
               />
