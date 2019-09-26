@@ -19,6 +19,7 @@ class Bookcard extends Component {
           <div>{this.props.data.title}</div>
           <img src={this.props.data.image} />
           <div>{this.props.data.description}</div>
+          <div>{this.props.data.authors}</div>
           <a href={this.props.data.link}>Read more.</a>
         </div>
         <button onClick={this.deleteAsAFavorite}>
