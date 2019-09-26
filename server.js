@@ -46,6 +46,17 @@ app.post('/api/books', (req, res) => {
   });
 })
 
+app.delete('/api/books/:id', (req, res) => {
+  db.Book.find({ _id: req.params.id })
+  .remove()
+  .then(function() {
+    res.send("Comment deleted.");
+  })
+  .catch(function(err) {
+    res.json(err);
+  });
+})
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
