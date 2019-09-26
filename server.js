@@ -21,7 +21,7 @@ app.use(express.json());
 //   app.use(express.static("client/build"));
 // }
 if (process.env.NODE_ENV) {
-  app.use(express.static(path.join(_dirname, "build")));
+  app.use(express.static(path.join(__dirname, "build")));
 }
 
 // Define API routes here
