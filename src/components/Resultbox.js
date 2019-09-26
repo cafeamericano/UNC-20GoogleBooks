@@ -6,7 +6,7 @@ class Resultbox extends Component {
     super(props);
     this.state = {
       searchResults: [],
-      searchTerm: 'harry'
+      searchTerm: "harry"
     };
   }
 
@@ -15,9 +15,11 @@ class Resultbox extends Component {
   };
 
   componentDidUpdate = () => {
-    if(this.props.activeSearchTerm !== this.state.searchTerm){
-      this.setState({searchTerm: this.props.activeSearchTerm});
-      this.grabBooksFromApi()
+    if (this.props.activeSearchTerm !== this.state.searchTerm) {
+      this.setState({ searchTerm: this.props.activeSearchTerm });
+      setTimeout(() => {
+        this.grabBooksFromApi();
+      }, 10);
     }
   };
 
@@ -42,7 +44,7 @@ class Resultbox extends Component {
         </div>
       );
     } else {
-      let cards = this.state.searchResults.map((item) => (
+      let cards = this.state.searchResults.map(item => (
         <Resultcard key={item.id} data={item} />
       ));
       return (
