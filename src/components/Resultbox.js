@@ -6,7 +6,7 @@ class Resultbox extends Component {
     super(props);
     this.state = {
       searchResults: [],
-      searchTerm: "harry"
+      searchTerm: ""
     };
   }
 
