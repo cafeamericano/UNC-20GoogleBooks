@@ -36,7 +36,7 @@ class Savedbox extends Component {
       return null;
     } else {
       return (
-        <div class="card mb-3 p-3 bg-secondary">
+        <div class="card mb-3 p-3 bg-light">
           <h6>Saved Books</h6>
           <div class="card-body">{allSavedBooks}</div>
         </div>

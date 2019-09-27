@@ -38,7 +38,7 @@ class Resultbox extends Component {
     //Ensure that data has been pulled from API
     if (this.state.searchResults === undefined) {
       return (
-        <div class="card mb-3 p-3 bg-secondary">
+        <div class="card mb-3 p-3 bg-light">
           <h6>Results</h6>
           <div class="card-body">There are no records to display.</div>
         </div>
@@ -48,7 +48,7 @@ class Resultbox extends Component {
         <Resultcard key={item.id} data={item} />
       ));
       return (
-        <div class="card mb-3 p-3 bg-secondary">
+        <div class="card mb-3 p-3 bg-light">
           <h6>Results</h6>
           <div class="card-body">{cards}</div>
         </div>

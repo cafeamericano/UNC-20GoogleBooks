@@ -33,16 +33,18 @@ class Main extends Component {
     return (
       <Router>
         <Navbar />
-        <Titlebox />
-        <Route exact path="/saved" component={Savedbox} />
-        <Route exact path="/" className="container">
-          <Searchbox
-            value={this.state.keywords}
-            handleInputChange={this.handleInputChange}
-            handleFormSubmit={this.handleFormSubmit}
-          />
-          <Resultbox activeSearchTerm={this.state.activeSearchTerm} />
-        </Route>
+        <div className="container">
+          <Titlebox />
+          <Route exact path="/saved" component={Savedbox} />
+          <Route exact path="/" className="container">
+            <Searchbox
+              value={this.state.keywords}
+              handleInputChange={this.handleInputChange}
+              handleFormSubmit={this.handleFormSubmit}
+            />
+            <Resultbox activeSearchTerm={this.state.activeSearchTerm} />
+          </Route>
+        </div>
       </Router>
     );
   }
