@@ -43,6 +43,15 @@ class Resultbox extends Component {
           <div class="card-body">There are no records to display.</div>
         </div>
       );
+    } else if (this.props.activeSearchTerm === "") {
+      return (
+        <div class="card mb-3 p-3 bg-light">
+          <h6>Results</h6>
+          <div class="card-body">
+            Search for a book to see possible matches appear here.
+          </div>
+        </div>
+      );
     } else {
       let cards = this.state.searchResults.map(item => (
         <Resultcard key={item.id} data={item} />
