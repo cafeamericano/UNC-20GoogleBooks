@@ -23,10 +23,10 @@ class Main extends Component {
     });
   };
 
-  // When the form is submitted, search the OMDB API for the value of `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     this.setState({ activeSearchTerm: this.state.keywords });
+    setTimeout( () => this.setState({keywords: ""}), 1)
   };
 
   render() {

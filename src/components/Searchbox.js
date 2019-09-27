@@ -8,25 +8,27 @@ class Searchbox extends Component {
     return (
       <div class="card mb-3">
         <div class="card-body">
-          <form class="form-inline">
+          <form class="form">
             <h6>Search for a Book</h6>
-            <div class="form-group mx-sm-3 mb-2">
+            <div class="form-group">
               <input
                 type="text"
                 class="form-control"
                 placeholder="Title"
-                name='keywords'
+                name="keywords"
                 onChange={this.props.handleInputChange}
                 value={this.props.value}
               />
             </div>
-            <button
-              onClick={this.props.handleFormSubmit}
-              type="submit"
-              class="btn btn-primary mb-2"
-            >
-              Search
-            </button>
+            <div className="text-right">
+              <button
+                onClick={this.props.handleFormSubmit}
+                type="submit"
+                class="btn btn-primary mb-2"
+              >
+                Search
+              </button>
+            </div>
           </form>
         </div>
       </div>
