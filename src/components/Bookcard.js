@@ -16,15 +16,34 @@ class Bookcard extends Component {
     return (
       <div class="card mb-3">
         <div class="card-body">
-          <div>{this.props.data.title}</div>
-          <img src={this.props.data.image} />
-          <div>{this.props.data.description}</div>
-          <div>{this.props.data.authors}</div>
-          <a href={this.props.data.link}>Read more.</a>
+          <div class="row">
+            <div className="col-6 text-left">{this.props.data.title}</div>
+            <div className="col-6 text-right">
+              <a href={this.props.data.link}>
+                <div className="btn btn-secondary ml-2">View</div>
+              </a>
+              <button
+                className="btn btn-secondary ml-2"
+                onClick={this.deleteAsAFavorite}
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div className="col-12 text-left">
+              <small>{this.props.data.authors}</small>
+            </div>
+          </div>
+          <div class="row">
+            <div className="col-2 text-left">
+              <img src={this.props.data.image} />
+            </div>
+            <div className="col-10 text-left">
+              {this.props.data.description}
+            </div>
+          </div>
         </div>
-        <button onClick={this.deleteAsAFavorite}>
-          Delete {this.props.data._id}
-        </button>
       </div>
     );
   }
